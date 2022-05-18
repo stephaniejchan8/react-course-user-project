@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import styles from './UserForm.module.css';
+import './UserForm.css';
 import Button from './UI/Button';
+import Card from './UI/Card';
 
 const UserForm = props => {
   const [enteredName, setEnteredName] = useState('');
@@ -27,14 +28,14 @@ const UserForm = props => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className={styles['user-form']}>
+      <Card className='user-form'>
 
       <label>Username</label>
       <input type="text" onChange={nameChangeHandler} value={enteredName}></input>
       <label>Age (Years)</label>
       <input type="number" step="1" min="1" onChange={ageChangeHandler} value={enteredAge}></input>
       <Button type='submit'>Add User</Button>
-      </div>
+      </Card>
     </form>
   )
 };

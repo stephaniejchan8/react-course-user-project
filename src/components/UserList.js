@@ -1,10 +1,11 @@
 // import {useState} from 'react';
+import Card from "./UI/Card";
 import UserItem from "./UserItem";
-import styles from './UserList.module.css';
+import './UserList.css';
 
 const UserList = props => {
   // const [displayUsers, setDisplayUsers] = useState('No users inputted yet.');
-  let content = <p className={styles['no-input']}>No users inputted yet.</p>;
+  let content = <p className='no-input'>No users inputted yet.</p>;
 
   if (props.items.length > 0) {
     content = props.items.map(user => {
@@ -13,9 +14,9 @@ const UserList = props => {
   };
 
   return (
-    <div className={styles['user-list']}>
+    <Card className='user-list'>
       {content}
-    </div>
+    </Card>
   );
 }
 
