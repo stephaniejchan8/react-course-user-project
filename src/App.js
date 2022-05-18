@@ -14,7 +14,7 @@ function App() {
 };
 
   return (
-    <div>
+    <div className='App'>
       <UserForm onAddUser={addUserHandler}/>
       <UserList items={userDatabase} />
     </div>
