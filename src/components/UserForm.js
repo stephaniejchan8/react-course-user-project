@@ -13,6 +13,8 @@ const UserForm = props => {
       age: enteredAge
     };
     props.onAddUser(userData);
+    setEnteredName('');
+    setEnteredAge('');
   };
 
   const nameChangeHandler = event => {
@@ -24,13 +26,13 @@ const UserForm = props => {
   };
 
   return (
-    <form onClick={submitHandler}>
+    <form onSubmit={submitHandler}>
       <div className={styles['user-form']}>
 
       <label>Username</label>
       <input type="text" onChange={nameChangeHandler} value={enteredName}></input>
       <label>Age (Years)</label>
-      <input type="text" onChange={ageChangeHandler} value={enteredAge}></input>
+      <input type="number" step="1" min="1" onChange={ageChangeHandler} value={enteredAge}></input>
       <Button type='submit'>Add User</Button>
       </div>
     </form>

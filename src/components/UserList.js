@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const UserList = props => {
-  const [displayUsers, setDisplayUsers] = useState('No users inputted yet.');
+  const [displayUsers, setDisplayUsers] = useState(props.items);
   let content = <p>{displayUsers}</p>;
 
   if (props.items.length > 0) {
