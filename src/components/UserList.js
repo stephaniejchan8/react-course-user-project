@@ -1,18 +1,18 @@
-import {useState} from 'react';
+// import {useState} from 'react';
 
 const UserList = props => {
-  const [displayUsers, setDisplayUsers] = useState(props.items);
-  let content = <p>{displayUsers}</p>;
+  // const [displayUsers, setDisplayUsers] = useState('No users inputted yet.');
+  let content = <p>No users inputted yet.</p>;
 
   if (props.items.length > 0) {
-    setDisplayUsers('You have added content.');
+    content = <p>You have added content.</p>;
   };
 
   return (
     <div>
-      {displayUsers}
+      {content}
     </div>
-  )
-};
+  );
+}
 
 export default UserList;
