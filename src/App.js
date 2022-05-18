@@ -3,6 +3,7 @@ import {useState} from 'react';
 import './App.css';
 import UserForm from './components/UserForm';
 import UserList from './components/UserList';
+import Modal from './components/Modal';
 
 function App() {
   const [userDatabase, setUserDatabase] = useState('');
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className='App'>
+      <Modal />
       <UserForm onAddUser={addUserHandler}/>
       <UserList items={userDatabase} />
     </div>
