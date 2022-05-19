@@ -9,13 +9,20 @@ const UserForm = props => {
 
   const submitHandler = event => {
     event.preventDefault();
-    const userData = {
-      name: enteredName,
-      age: enteredAge
-    };
-    props.onAddUser(userData);
-    setEnteredName('');
-    setEnteredAge('');
+    if (!enteredName || !enteredAge) {
+      console.log('empty fields');
+      const modalMessage = <p>Please enter a valid name and age (non-empty values).</p>;
+      props.onDisplayModal(modalMessage);
+    }
+    else {
+      const userData = {
+        name: enteredName,
+        age: enteredAge
+      };
+      props.onAddUser(userData);
+      setEnteredName('');
+      setEnteredAge('');
+    }
   };
 
   const nameChangeHandler = event => {
