@@ -13,6 +13,9 @@ const UserForm = props => {
       console.log('empty fields');
       const modalMessage = <p>Please enter a valid name and age (non-empty values).</p>;
       props.onDisplayModal(modalMessage);
+    } else if (enteredAge < 1) {
+      const modalMessage = <p>Please enter a valid age (>0).</p>
+      props.onDisplayModal(modalMessage);
     }
     else {
       const userData = {
@@ -40,7 +43,7 @@ const UserForm = props => {
       <label>Username</label>
       <input type="text" onChange={nameChangeHandler} value={enteredName}></input>
       <label>Age (Years)</label>
-      <input type="number" step="1" min="1" onChange={ageChangeHandler} value={enteredAge}></input>
+      <input type="number" step="1" onChange={ageChangeHandler} value={enteredAge}></input>
       <Button type='submit'>Add User</Button>
       </Card>
     </form>
