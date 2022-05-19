@@ -19,12 +19,12 @@ function App() {
 
   const displayModalHandler = modalMessage => {
     setDisplayModal(true);
-    setModalContent(<Modal modalBody={modalMessage} />);
+    setModalContent(modalMessage);
   };
 
   return (
     <div className='App'>
-      {displayModal && modalContent}
+      <Modal className={displayModal ? 'display-modal' : ''} onToggleModal={setDisplayModal} modalBody={modalContent}/>
       <UserForm onAddUser={addUserHandler} onDisplayModal={displayModalHandler} />
       <UserList items={userDatabase} />
     </div>
